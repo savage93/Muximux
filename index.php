@@ -1,8 +1,7 @@
 <?php
 error_reporting (E_ALL ^ E_NOTICE); /* Turn off notice errors */
 require 'muximux.php';
-if (is_session_started()) session_destroy();
-session_start();
+if (!is_session_started()) session_start();
 defined("CONFIG") ? null : define('CONFIG', 'settings.ini.php');
     defined("CONFIGEXAMPLE") ? null : define('CONFIGEXAMPLE', 'settings.ini.php-example');
     defined("SECRET") ? null : define('SECRET', 'secret.txt');

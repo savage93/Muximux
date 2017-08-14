@@ -2,6 +2,7 @@
 /*
 * DO NOT CHANGE THIS FILE!
 */
+session_start();
 defined("CONFIG") ? null : define('CONFIG', 'settings.ini.php');
 defined("CONFIGEXAMPLE") ? null : define('CONFIGEXAMPLE', 'settings.ini.php-example');
 defined("SECRET") ? null : define('SECRET', 'secret.txt');
@@ -25,7 +26,7 @@ if(!file_exists(CONFIG)){
 
 // First what we're gonna do - save or read
 if (sizeof($_POST) > 0) {
-    if(!isset($_POST['username'])){
+    if(isset($_SESSION['username'])){
         write_ini();
     }
 } 
